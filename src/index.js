@@ -1,5 +1,5 @@
-import React from 'react' 
+import Uploader from './Uploader'
 
-const Comp = () => <p>the component</p>
+export { disableDragDrop, enableDragDrop } from './disableDragDrop.js'
 
-export default Comp
+export default Uploader
