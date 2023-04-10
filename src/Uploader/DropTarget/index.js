@@ -1,5 +1,6 @@
 import React, { useState }  from 'react'
 
+import DropInstructions from './DropInstructions'
 import Overlay from './Overlay'
 
 import useDragDrop from '../useDragDrop'
@@ -10,19 +11,15 @@ const useDropTargetClassName = () => {
 }
 
 const DropTarget = () => {
-const dropTargetClass = useDropTargetClassName()
-const { onDragEnter, onDragLeave, onDrop } = useDragDrop()
-  
+  const dropTargetClass = useDropTargetClassName()
+  const { onDragEnter, onDragLeave, onDrop } = useDragDrop()
+
   return (
-    <div 
-      className={dropTargetClass}
-      onDragEnter={onDragEnter}
-      onDragLeave={onDragLeave}
-      onDragOver={() => {}}
-      onDrop={onDrop}
-    >
+    <div className={dropTargetClass}>
+      <div className="bg">
+        <DropInstructions />
+      </div>
       <Overlay />
-      <p>drop target</p>
     </div>
   )
 }

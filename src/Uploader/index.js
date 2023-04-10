@@ -1,20 +1,25 @@
 import React, { useEffect } from 'react' 
+
 import { disableDragDrop, enableDragDrop } from '../disableDragDrop'
-import { DragDropProvider } from './useDragDrop.js'
+
 import DropTarget from './DropTarget/'
+import UploadInstructions from './UploadInstructions'
+import { DragDropProvider } from './useDragDrop.js'
 
 const Uploader = () => {
 
   useEffect(() => {
     disableDragDrop() 
-  //  return enableDragDrop
+    return enableDragDrop
   }, [])
 
-
   return (
-    <DragDropProvider>
-      <DropTarget />
-    </DragDropProvider>
+    <div className="uploader"> 
+      <DragDropProvider>
+        <DropTarget />
+        <UploadInstructions />
+      </DragDropProvider>
+    </div>
   )
 }
 

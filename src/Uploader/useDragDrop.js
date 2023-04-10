@@ -14,6 +14,7 @@ export const DragDropProvider = props => {
   const onDragLeave = () => setIsDragging(false)
 
   const onDrop = e => {
+    setIsDragging(false)
     const files = e.dataTransfer.files
     if(isAbsent(files)) {
       console.log('is this ever empty', files)
