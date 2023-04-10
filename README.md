@@ -4,7 +4,7 @@
 npm run build
 ```
 
-creates `/dist/component.min.js`
+creates `/dist/Component.min.js`
 
 ### Config 
 

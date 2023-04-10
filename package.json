@@ -2,7 +2,7 @@
   "name": "bundle-component",
   "version": "1.0.0",
   "description": "Bundle React component with rollup",
-  "main": "./dist/component.min.js",
+  "main": "./dist/Component.min.js",
   "type": "commonjs",
   "scripts": {
     "build": "rollup -c",
