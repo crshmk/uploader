@@ -1,1 +1,8 @@
-Basic rollup setup for js only 
+### Bundle React component with rollup
+
+```bash
+npm run build
+```
+
+creates `/dist/component.min.js`
+
