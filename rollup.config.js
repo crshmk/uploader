@@ -6,7 +6,7 @@ import { uglify } from 'rollup-plugin-uglify'
 export default {
   input: './src/index.js',
   output: {
-    file: './dist/Component.min.js',
+    file: './dist/Uploader.min.js',
     format: 'cjs',
     name: 'bundle'
   },
@@ -18,5 +18,5 @@ export default {
     commonjs(),
     uglify()
   ],
-  external: ['react']
+  external: ['ramda', 'react']
 }
