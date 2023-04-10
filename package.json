@@ -6,7 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "dev": "npm link utils && rollup -c -w",
     "test": "jest"
   },
   "keywords": [

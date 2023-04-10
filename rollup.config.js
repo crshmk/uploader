@@ -15,8 +15,7 @@ export default {
       exclude: 'node_modules/**'
     }),
     resolve(),
-    commonjs(),
-    uglify()
+    commonjs()
   ],
   external: ['ramda', 'react']
 }
