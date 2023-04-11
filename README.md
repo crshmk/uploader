@@ -39,3 +39,9 @@ example cropped image:
 
 
 <img src="https://github.com/crshmk/uploader/blob/master/sample-crop.png" width="300" />
+
+---
+
+### Setup 
+
+No styling is bundled in the build. The [example](https://github.com/crshmk/uploader/tree/master/example) folder provides a css module and background image to create the examples above. 
