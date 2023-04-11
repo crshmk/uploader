@@ -1,7 +1,7 @@
 {
   "name": "uploader",
   "version": "1.0.0",
-  "description": "React component for uploading files",
+  "description": "React component to crop and display image uploads",
   "main": "./dist/Uploader.min.js",
   "type": "commonjs",
   "scripts": {

@@ -1,8 +1,8 @@
-## React component to prepare files to upload 
+## React component to crop and display image uploads
 
-- drag/drop or use file input to upload image 
+- drag/drop or use file input to select image 
 - crop the image to a square from its center 
-- display as avatar
+- display image preview 
 - emit the [dataUrl](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) of the cropped image via the `onLoad` callback
 
 ```javascript
@@ -45,3 +45,5 @@ example cropped image:
 ### Setup 
 
 No styling is bundled in the build. The [example](https://github.com/crshmk/uploader/tree/master/example) folder provides a css module and background image to create the examples above. 
+
+The square cropping could easily be adjusted by exposing some `aspectRatio` prop and adjusting it [here](https://github.com/crshmk/uploader/blob/master/src/Uploader/DropTarget/crop/createCanvas/getDimensions.js). 
