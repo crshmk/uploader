@@ -7,8 +7,10 @@ import { isAbsent } from 'utils'
 const Preview = () => {
   const { file } = useDragDrop()
   if (isAbsent(file)) return null 
+
+  const src = URL.createObjectURL(file) 
   
-  return (
-    <div className="preview"></div>    
-  )
+  return <img src={src} />
 }
+
+export default Preview
