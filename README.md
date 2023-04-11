@@ -18,4 +18,13 @@ With example css:
 
 <img src="https://github.com/crshmk/uploader/blob/master/example.png" width="300" />
 
+example uploaded image:
 
+
+<img src="https://github.com/crshmk/uploader/blob/master/sample-upload.png" width="300" />
+
+
+example cropped image (border with css):
+
+
+<img src="https://github.com/crshmk/uploader/blob/master/sample-crop.png" width="300" />
