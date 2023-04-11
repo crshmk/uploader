@@ -1,34 +1,5 @@
-### Bundle React component with rollup
+## React component to prepare files to upload 
 
-```bash
-npm run build
-```
+With example css:
 
-creates `/dist/Component.min.js`
-
-### Config 
-
-List peer dependencies in `package.json` and add them to the `external` prop in `rollup.config.js`
-
-```javascript
-{ 
-  external: ['ramda', 'react']
-}
-```
-
-
-Rename the output file in `rollup.config.js`
-```javascript
-{
-  output: {
-    file: './dist/FileUploader.min.js'
-  }
-}
-```
-and in `package.json`
-```json
-{
-  "name": "file-uploader",
-  "main": "./dist/FileUploader.min.js" 
-}
-```
+<img src="https://github.com/crshmk/uploader/blob/master/example.png" width="300" />
