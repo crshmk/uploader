@@ -4,6 +4,8 @@ const DragDropContext = createContext()
 
 const useDragDrop = () => useContext(DragDropContext)
 
+const noop = () => {}
+
 export const DragDropProvider = props => {
   const [file, _setFile] = useState({})
   const [isDragging, setIsDragging] = useState(false)
@@ -16,11 +18,14 @@ export const DragDropProvider = props => {
     setIsDragging(false)
   }
 
+  const onLoad = props.onLoad || noop
+
   const ctx = {
     file, 
     isDragging,
     onDragEnter,
     onDragLeave,
+    onLoad,
     setFile
   }
 

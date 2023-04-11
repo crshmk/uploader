@@ -6,7 +6,7 @@ import DropTarget from './DropTarget/'
 import UploadInstructions from './UploadInstructions'
 import { DragDropProvider } from './useDragDrop.js'
 
-const Uploader = () => {
+const Uploader = ({ onLoad }) => {
 
   useEffect(() => {
     disableDragDrop() 
@@ -15,7 +15,7 @@ const Uploader = () => {
 
   return (
     <div className="uploader"> 
-      <DragDropProvider>
+      <DragDropProvider onLoad={onLoad}>
         <DropTarget />
         <UploadInstructions />
       </DragDropProvider>

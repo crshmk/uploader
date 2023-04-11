@@ -14,8 +14,8 @@ const getCropPoints = dimensions => {
     loadedWidth 
   } = dimensions 
 
-  const cropX = (croppedWidth - loadedWidth) * 0.5;
-  const cropY = (croppedHeight - loadedHeight) * 0.5;
+  const cropX = (croppedWidth - loadedWidth) * 0.5
+  const cropY = (croppedHeight - loadedHeight) * 0.5
   return { cropX, cropY }
 }
 

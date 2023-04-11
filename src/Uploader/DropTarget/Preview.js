@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import useDragDrop from '../useDragDrop.js'
 
@@ -7,13 +7,15 @@ import { isAbsent } from 'utils'
 
 const Preview = () => {
   const ref = useRef(null)
-  const { file } = useDragDrop()
+  const { file, onLoad } = useDragDrop()
 
-  if (isAbsent(file)) return null 
+  useEffect(() => {
+    if(isAbsent(file)) return 
+    // set preview image and execute parent callback
+    crop(ref, file).then(onLoad)
+  }, [file])
 
-  crop(ref, file, 1)
-
-  return <img ref={ref} /> 
+  return isAbsent(file) ? null : <img ref={ref} /> 
 }
 
 export default Preview
