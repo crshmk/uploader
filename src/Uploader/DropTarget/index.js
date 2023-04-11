@@ -6,9 +6,17 @@ import Preview from './Preview'
 
 import useDragDrop from '../useDragDrop'
 
+import { isPresent } from 'utils'
+
 const useDropTargetClassName = () => {
-  const { isDragging } = useDragDrop()
-  return 'drop-target' + (isDragging ? ' is-dragging' : '')
+  const { file, isDragging } = useDragDrop()
+  return [
+    'drop-target',
+    (isDragging ? 'is-dragging' : ''), 
+    (isPresent(file) ? 'has-file' : '')
+  ]
+    .filter(isPresent)
+    .join(' ')
 }
 
 const DropTarget = () => {
