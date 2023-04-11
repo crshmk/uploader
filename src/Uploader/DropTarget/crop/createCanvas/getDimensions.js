@@ -4,6 +4,8 @@
   * @param {HTMLImageElement} loadedImage
   *
   * @return (Object} { croppedHeight, croppedWidth, loadedHeight, loadedWidth }
+  * 
+  * dimension ideas from https://pqina.nl/blog/cropping-images-to-an-aspect-ratio-with-javascript/#cropping-the-image-to-a-square-aspect-ratio
  **/
 
 // square
