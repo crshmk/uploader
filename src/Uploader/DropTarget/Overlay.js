@@ -20,8 +20,7 @@ const Overlay = () => {
       onDragLeave={onDragLeave}
       onDragOver={() => {}}
       onDrop={onDrop}
-    >
-    </div>
+     />
   )
 }
 

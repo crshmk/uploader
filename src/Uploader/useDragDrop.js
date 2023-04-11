@@ -1,8 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from 'react' 
+import React, { createContext, useContext, useState } from 'react' 
 
 const DragDropContext = createContext() 
-
-import { isAbsent } from 'utils'
 
 const useDragDrop = () => useContext(DragDropContext)
 
