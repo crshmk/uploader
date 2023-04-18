@@ -11,7 +11,7 @@ const Preview = () => {
 
   useEffect(() => {
     if(isAbsent(file)) return 
-    // set preview image and execute parent callback
+    // set preview image and pass the parent callback the dataURL and a blob created from the canvas
     crop(ref, file).then(onLoad)
   }, [file])
 

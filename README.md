@@ -11,8 +11,16 @@ import Uploader from 'uploader'
 <Upload onLoad={onSelectAvatar} />
 ```
 
-The `onLoad` callback is handed the [dataUrl](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) string for the cropped image. It can be used as an image `src` attribute or a payload to save the cropped image.
-> data:image/png;base64,iVBORw0KGgoAAAANSUh...
+The `onLoad` callback is handed a [dataUrl](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) and a [blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from the cropped image. 
+```javascript
+const onSelectAvatar = ({ blob, dataUrl }) => {
+}
+
+<Upload onLoad={onSelectAvatar} />
+```
+
+The `dataUrl` can be posted as `application/json`, or the `blob` can be posted as `multipart/form-data`.
+
 ---
 
 The utils to enable and disable default browser previews of dropped files are also exposed. Because browsers open dropped files in a new tab, it can be useful to disable this on pages with a dropzone smaller than the entire page. The `Upload` component disables such behavior while it is mounted.
