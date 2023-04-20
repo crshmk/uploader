@@ -12,18 +12,14 @@
 import createCanvas from './createCanvas'
 
 function crop(ref, file) {
-  return new Promise((resolve) => {
+  return new Promise(resize => {
     const loadedImage = new Image()
 
-    // todo file.size to determine reduction
     loadedImage.onload = () => {
       const canvas = createCanvas(loadedImage)
-      const dataUrl = canvas.toDataURL('image/jpeg', 0.7)
+      const dataUrl = canvas.toDataURL('image/jpeg')
       ref.current.src = dataUrl
-      // execute the onLoad callback passed from the parent
-      canvas.toBlob(blob => {
-        resolve({ blob, dataUrl })
-      }, 'jpeg')
+      resize(canvas)
     }
 
     const url = URL.createObjectURL(file) 

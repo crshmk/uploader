@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import useDragDrop from '../useDragDrop.js'
 
 import crop from './crop'
+import resize from './resize'
 import { isAbsent } from 'utils'
 
 const Preview = () => {
@@ -11,8 +12,8 @@ const Preview = () => {
 
   useEffect(() => {
     if(isAbsent(file)) return 
-    // set preview image and pass the parent callback the dataURL and a blob created from the canvas
-    crop(ref, file).then(onLoad)
+    crop(ref, file)
+      .then(resize(file.size, onLoad))
   }, [file])
 
   return isAbsent(file) ? null : <img ref={ref} /> 
