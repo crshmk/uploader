@@ -1,5 +1,11 @@
 ## React component to crop and display image uploads
 
+```bash
+npm i crshmk/uploader
+```
+
+
+
 - drag/drop or use file input to select image 
 - crop the image to a square from its center 
 - display image preview 
@@ -7,8 +13,17 @@
 
 ```javascript
 import Uploader from 'uploader'
+// the css setup is css modules
+import 'node_modules/uploader/dist/index.css'
 
 <Upload onLoad={onSelectAvatar} />
+```
+
+Just override the css selectors to style it 
+```css
+.my-container .uploader {
+  width: 200px;
+}
 ```
 
 The `onLoad` callback is handed a [dataUrl](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) and a [blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from the cropped image. 
@@ -33,7 +48,7 @@ useEffect(disableDragDrop, []))
 --- 
 
 
-With example css:
+With included css:
 
 <img src="https://github.com/crshmk/uploader/blob/master/example.png" width="300" />
 
@@ -50,8 +65,5 @@ example cropped image:
 
 ---
 
-### Setup 
-
-No styling is bundled in the build. The [example](https://github.com/crshmk/uploader/tree/master/example) folder provides a css module and background image to create the examples above. 
 
 The square cropping could easily be adjusted by exposing some `aspectRatio` prop and adjusting it [here](https://github.com/crshmk/uploader/blob/master/src/Uploader/DropTarget/crop/createCanvas/getDimensions.js). 

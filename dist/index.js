@@ -1,8 +1,12 @@
 'use strict';
 
-var index = require('./Uploader/index.js');
+Object.defineProperty(exports, '__esModule', { value: true });
 
-//export { disableDragDrop, enableDragDrop } from './disableDragDrop.js'
+var disableDragDrop = require('./disableDragDrop.js');
+var index = require('./Uploader.min.js');
+
 require('./index.css');
 
-module.exports = index;
+exports.disableDragDrop = disableDragDrop.disableDragDrop;
+exports.enableDragDrop = disableDragDrop.enableDragDrop;
+exports.default = index;
