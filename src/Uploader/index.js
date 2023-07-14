@@ -6,8 +6,6 @@ import DropTarget from './DropTarget/'
 import UploadInstructions from './UploadInstructions'
 import { DragDropProvider } from './useDragDrop.js'
 
-import './uploader.css'
-
 const Uploader = ({ onLoad }) => {
 
   useEffect(() => {
