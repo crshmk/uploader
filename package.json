@@ -2,7 +2,7 @@
   "name": "uploader",
   "version": "1.0.0",
   "description": "React component to crop and display image uploads",
-  "main": "./dist/Uploader.min.js",
+  "main": "./dist/index.js",
   "type": "commonjs",
   "scripts": {
     "build": "rollup -c",
@@ -23,6 +23,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-uglify": "^6.0.4"
   },
   "peerDependencies": {
