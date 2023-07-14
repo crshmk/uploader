@@ -22,7 +22,8 @@ export default {
       extract: true,
       minimize: true
   }),
-    commonjs()
+    commonjs(),
+    uglify()
   ],
   external: ['ramda', 'react', 'ramjam']
 }
