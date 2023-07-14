@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var disableDragDrop = require('./disableDragDrop.js');
-var index = require('./Uploader.min.js');
+var index = require('./Uploader/index.js');
 
 require('./index.css');
 
