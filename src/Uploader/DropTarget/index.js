@@ -6,7 +6,7 @@ import Preview from './Preview'
 
 import useDragDrop from '../useDragDrop'
 
-import { isPresent } from 'utils'
+import { isPresent } from 'ramjam'
 
 const useDropTargetClassName = () => {
   const { file, isDragging } = useDragDrop()

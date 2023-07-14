@@ -2,7 +2,7 @@ import React from 'react'
 
 import useDragDrop from '../useDragDrop.js'
 
-import { isAbsent } from 'utils'
+import { isAbsent } from 'ramjam'
 
 const Input = () => {
   const { setFile } = useDragDrop()

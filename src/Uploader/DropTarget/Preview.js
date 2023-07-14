@@ -4,7 +4,7 @@ import useDragDrop from '../useDragDrop.js'
 
 import crop from './crop'
 import resize from './resize'
-import { isAbsent } from 'utils'
+import { isAbsent } from 'ramjam'
 
 const Preview = () => {
   const ref = useRef(null)

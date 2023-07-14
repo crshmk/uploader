@@ -17,5 +17,5 @@ export default {
     resolve(),
     commonjs()
   ],
-  external: ['ramda', 'react']
+  external: ['ramda', 'react', 'ramjam']
 }
