@@ -17,13 +17,13 @@ export default {
       exclude: 'node_modules/**'
     }),
     resolve(),
+    commonjs(),
+    uglify(),
     postcss({
       sourceMap: true,
       extract: true,
       minimize: true
   }),
-    commonjs(),
-    uglify()
   ],
   external: ['ramda', 'react', 'ramjam']
 }

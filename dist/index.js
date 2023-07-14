@@ -1,1 +1,1 @@
-"use strict";var index=require("./Uploader/index.js");module.exports=index;
+"use strict";var index=require("./Uploader/index.js");require("./uploader.css"),module.exports=index;

@@ -1,6 +1,6 @@
 import Uploader from './Uploader'
 
 //export { disableDragDrop, enableDragDrop } from './disableDragDrop.js'
-require('./index.css')
+require('./uploader.css')
 
 export default Uploader
