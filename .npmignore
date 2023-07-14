@@ -1,6 +1,5 @@
 example
 src
-dist/Uploader
 example.png
 rollup.config.js
 sample-crop.png
