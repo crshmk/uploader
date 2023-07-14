@@ -1,1 +1,25 @@
-"use strict";function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var React=require("react"),React__default=_interopDefault(React),disableDragDrop=require("../disableDragDrop.js"),useDragDrop=require("./useDragDrop.js"),index=require("./DropTarget/index.js"),index$1=require("./UploadInstructions/index.js"),Uploader=function(e){e=e.onLoad;return React.useEffect(function(){return disableDragDrop.disableDragDrop(),disableDragDrop.enableDragDrop},[]),React__default.createElement("div",{className:"uploader"},React__default.createElement(useDragDrop.DragDropProvider,{onLoad:e},React__default.createElement(index,null),React__default.createElement(index$1,null)))};module.exports=Uploader;
+'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var React = require('react');
+var React__default = _interopDefault(React);
+var disableDragDrop = require('../disableDragDrop.js');
+var useDragDrop = require('./useDragDrop.js');
+var index = require('./DropTarget/index.js');
+var index$1 = require('./UploadInstructions/index.js');
+
+var Uploader = function Uploader(_ref) {
+  var onLoad = _ref.onLoad;
+  React.useEffect(function () {
+    disableDragDrop.disableDragDrop();
+    return disableDragDrop.enableDragDrop;
+  }, []);
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: "uploader"
+  }, /*#__PURE__*/React__default.createElement(useDragDrop.DragDropProvider, {
+    onLoad: onLoad
+  }, /*#__PURE__*/React__default.createElement(index, null), /*#__PURE__*/React__default.createElement(index$1, null)));
+};
+
+module.exports = Uploader;

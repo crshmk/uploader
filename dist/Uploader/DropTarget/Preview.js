@@ -1,1 +1,26 @@
-"use strict";function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var React=require("react"),React__default=_interopDefault(React),useDragDrop=require("../useDragDrop.js"),ramjam=require("ramjam"),index=require("./crop/index.js"),index$1=require("./resize/index.js"),Preview=function(){var e=React.useRef(null),r=useDragDrop.default(),t=r.file,a=r.onLoad;return React.useEffect(function(){ramjam.isAbsent(t)||index(e,t).then(index$1(t.size,a))},[t]),ramjam.isAbsent(t)?null:React__default.createElement("img",{ref:e})};module.exports=Preview;
+'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var React = require('react');
+var React__default = _interopDefault(React);
+var useDragDrop = require('../useDragDrop.js');
+var ramjam = require('ramjam');
+var index = require('./crop/index.js');
+var index$1 = require('./resize/index.js');
+
+var Preview = function Preview() {
+  var ref = React.useRef(null);
+  var _useDragDrop = useDragDrop.default(),
+    file = _useDragDrop.file,
+    onLoad = _useDragDrop.onLoad;
+  React.useEffect(function () {
+    if (ramjam.isAbsent(file)) return;
+    index(ref, file).then(index$1(file.size, onLoad));
+  }, [file]);
+  return ramjam.isAbsent(file) ? null : /*#__PURE__*/React__default.createElement("img", {
+    ref: ref
+  });
+};
+
+module.exports = Preview;

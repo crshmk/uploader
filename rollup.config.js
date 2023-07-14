@@ -18,7 +18,6 @@ export default {
     }),
     resolve(),
     commonjs(),
-    uglify(),
     postcss({
       sourceMap: true,
       extract: true,

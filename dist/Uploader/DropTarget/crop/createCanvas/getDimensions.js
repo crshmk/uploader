@@ -1,1 +1,43 @@
-"use strict";var croppedAspectRatio=1,getLoadedDimensions=function(e){var t=e.naturalWidth;return{loadedHeight:e.naturalHeight,loadedWidth:t}},getDimensions=function(e){var e=getLoadedDimensions(e),t=e.loadedHeight,e=e.loadedWidth,d=e,o=t,i=e/t;return croppedAspectRatio<i?d=t*croppedAspectRatio:i<croppedAspectRatio&&(o=e/croppedAspectRatio),{croppedHeight:o,croppedWidth:d,loadedHeight:t,loadedWidth:e}};module.exports=getDimensions;
+'use strict';
+
+/**
+  * get height and width of the uploaded and cropped images, respectively
+  *
+  * @param {HTMLImageElement} loadedImage
+  *
+  * @return (Object} { croppedHeight, croppedWidth, loadedHeight, loadedWidth }
+  * 
+  * dimension ideas from https://pqina.nl/blog/cropping-images-to-an-aspect-ratio-with-javascript/#cropping-the-image-to-a-square-aspect-ratio
+ **/
+
+// square
+var croppedAspectRatio = 1;
+var getLoadedDimensions = function getLoadedDimensions(loadedImage) {
+  var loadedWidth = loadedImage.naturalWidth;
+  var loadedHeight = loadedImage.naturalHeight;
+  return {
+    loadedHeight: loadedHeight,
+    loadedWidth: loadedWidth
+  };
+};
+var getDimensions = function getDimensions(loadedImage) {
+  var _getLoadedDimensions = getLoadedDimensions(loadedImage),
+    loadedHeight = _getLoadedDimensions.loadedHeight,
+    loadedWidth = _getLoadedDimensions.loadedWidth;
+  var croppedWidth = loadedWidth;
+  var croppedHeight = loadedHeight;
+  var loadedAspectRatio = loadedWidth / loadedHeight;
+  if (loadedAspectRatio > croppedAspectRatio) {
+    croppedWidth = loadedHeight * croppedAspectRatio;
+  } else if (loadedAspectRatio < croppedAspectRatio) {
+    croppedHeight = loadedWidth / croppedAspectRatio;
+  }
+  return {
+    croppedHeight: croppedHeight,
+    croppedWidth: croppedWidth,
+    loadedHeight: loadedHeight,
+    loadedWidth: loadedWidth
+  };
+};
+
+module.exports = getDimensions;
