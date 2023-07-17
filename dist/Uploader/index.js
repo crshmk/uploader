@@ -10,7 +10,8 @@ var index = require('./DropTarget/index.js');
 var index$1 = require('./UploadInstructions/index.js');
 
 var Uploader = function Uploader(_ref) {
-  var onLoad = _ref.onLoad;
+  var currentUrl = _ref.currentUrl,
+    onLoad = _ref.onLoad;
   React.useEffect(function () {
     disableDragDrop.disableDragDrop();
     return disableDragDrop.enableDragDrop;
@@ -18,7 +19,8 @@ var Uploader = function Uploader(_ref) {
   return /*#__PURE__*/React__default.createElement("div", {
     className: "uploader"
   }, /*#__PURE__*/React__default.createElement(useDragDrop.DragDropProvider, {
-    onLoad: onLoad
+    onLoad: onLoad,
+    currentUrl: currentUrl
   }, /*#__PURE__*/React__default.createElement(index, null), /*#__PURE__*/React__default.createElement(index$1, null)));
 };
 

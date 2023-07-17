@@ -34,6 +34,7 @@ var DragDropProvider = function DragDropProvider(props) {
   };
   var onLoad = props.onLoad || noop;
   var ctx = {
+    currentUrl: props.currentUrl,
     file: file,
     isDragging: isDragging,
     onDragEnter: onDragEnter,

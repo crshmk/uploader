@@ -17,9 +17,11 @@ import Uploader from 'uploader'
 // setup for css modules
 import 'node_modules/uploader/dist/index.css'
 
+const user = { avatar: 'http://site.co/current-image.jpg' }
+
 const onLoadAvatar = ({ blob, dataUrl }) => {}
 
-<Upload onLoad={onLoadAvatar} />
+<Upload onLoad={onLoadAvatar} currentUrl={user.avatar} />
 ```
 
 Style by overriding the css 

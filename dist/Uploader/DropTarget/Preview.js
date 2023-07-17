@@ -12,14 +12,16 @@ var index$1 = require('./resize/index.js');
 var Preview = function Preview() {
   var ref = React.useRef(null);
   var _useDragDrop = useDragDrop.default(),
+    currentUrl = _useDragDrop.currentUrl,
     file = _useDragDrop.file,
     onLoad = _useDragDrop.onLoad;
   React.useEffect(function () {
     if (ramjam.isAbsent(file)) return;
     index(ref, file).then(index$1(file.size, onLoad));
   }, [file]);
-  return ramjam.isAbsent(file) ? null : /*#__PURE__*/React__default.createElement("img", {
-    ref: ref
+  return ramjam.allAbsent([currentUrl, file]) ? null : /*#__PURE__*/React__default.createElement("img", {
+    ref: ref,
+    src: currentUrl
   });
 };
 

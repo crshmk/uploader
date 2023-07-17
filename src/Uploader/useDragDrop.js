@@ -21,6 +21,7 @@ export const DragDropProvider = props => {
   const onLoad = props.onLoad || noop
 
   const ctx = {
+    currentUrl: props.currentUrl,
     file, 
     isDragging,
     onDragEnter,

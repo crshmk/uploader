@@ -4,11 +4,11 @@ import useDragDrop from '../useDragDrop.js'
 
 import crop from './crop'
 import resize from './resize'
-import { isAbsent } from 'ramjam'
+import { allAbsent, isAbsent } from 'ramjam'
 
 const Preview = () => {
   const ref = useRef(null)
-  const { file, onLoad } = useDragDrop()
+  const { currentUrl, file, onLoad } = useDragDrop()
 
   useEffect(() => {
     if(isAbsent(file)) return 
@@ -16,7 +16,7 @@ const Preview = () => {
       .then(resize(file.size, onLoad))
   }, [file])
 
-  return isAbsent(file) ? null : <img ref={ref} /> 
+  return allAbsent([currentUrl, file]) ? null : <img ref={ref} src={currentUrl} /> 
 }
 
 export default Preview
