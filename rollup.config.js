@@ -11,7 +11,7 @@ export default {
     format: 'cjs',
     name: 'bundle'
   },
-  preserveModules: true,
+  //preserveModules: true,
   plugins: [
     babel({
       exclude: 'node_modules/**'
